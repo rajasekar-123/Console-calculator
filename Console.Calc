@@ -1,0 +1,102 @@
+package Calaculator;
+import java.util.Scanner;
+
+class operation
+{
+   public double addition(double a , double b)
+   {
+       return  a+b;
+   }
+
+  public double subtraction(double a , double b)
+   {
+       return a-b;
+   }
+
+   public double divde (double a , double b)
+   {
+       if(b == 0)
+       {
+             System.out.println("Zero Cannot divde by these values ");
+             return 0;
+       }
+
+       return a/b;
+   }
+   public  double multiplication (double a , double b)
+   {
+       return a*b;
+   }
+}
+
+public class Main {
+    static Scanner scan = new Scanner(System.in);
+
+
+    public static void main(String[] args)
+    {
+        operation ob = new operation();
+        while (true)
+        {
+            System.out.println("\n-- SIMPLE CALCULATOR");
+            System.out.println("1.Addition");
+            System.out.println("2.Subtraction");
+            System.out.println("3.Divide");
+            System.out.println("4.Multiplication");
+            System.out.println("5.Exit");
+            System.out.println("Choose the operation(1-5 )");
+
+            int choice = scan.nextInt();
+
+            if(5==0)
+            {
+                System.out.println("Existing a Calculator");
+                break;
+            }
+
+            System.out.println("Enter the number");
+            double num1 = scan.nextInt();
+
+            System.out.println("Enter the number");
+            double num2 = scan.nextInt();
+
+            double result ;
+
+            switch (choice)
+            {
+                case 1:
+                      result = ob.addition(num1,num2);
+                      System.out.println(result);
+                      break;
+
+                case 2:
+                    result = ob.subtraction(num1,num2);
+                    System.out.println(result);
+                    break;
+
+                case 3:
+                    result = ob.divde(num1,num2);
+                    System.out.println(result);
+                    break;
+
+                case 4:
+                    result = ob.multiplication(num1,num2);
+                    System.out.println(result);
+                    break;
+
+                case 5:
+                    result = ob.addition(num1,num2);
+                    System.out.println(result);
+                    break;
+
+                default:
+                    System.out.println("Invalid an Choice ");
+                    continue;
+            }
+            System.out.println("Result"+result);
+        }
+
+     scan.close();
+    }
+}
+
